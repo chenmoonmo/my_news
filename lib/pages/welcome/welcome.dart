@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_news/common/utils/utils.dart';
+// import 'package:my_news/common/utils/utils.dart';
 import 'package:my_news/common/values/values.dart';
 
 class WelecomePage extends StatefulWidget {
@@ -19,7 +19,7 @@ class _WelecomePageState extends State<WelecomePage> {
         'Features',
         textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: duSetFontSize(24),
+          fontSize: 24.ssp,
           fontFamily: 'Montserrat',
           color: AppColors.primaryText,
           fontWeight: FontWeight.w600,
@@ -31,15 +31,15 @@ class _WelecomePageState extends State<WelecomePage> {
   Widget _buildPageHeadDetail() {
     return Container(
       margin: EdgeInsets.only(
-        top: duSetHeight(14),
+        top: 14.h,
       ),
-      width: duSetWidth(242),
-      height: duSetHeight(70),
+      width: 242.w,
+      height: 70.h,
       child: Text(
         'The best of news channels all in one place. Trusted sources and personalized news for you.',
         textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: duSetFontSize(16),
+          fontSize: 16.ssp,
           fontWeight: FontWeight.normal,
           fontFamily: 'Avenir',
           color: AppColors.primaryText,
@@ -50,17 +50,17 @@ class _WelecomePageState extends State<WelecomePage> {
 
   Widget _buildFeatureItem(String imageName, String intro, double marginTop) {
     return Container(
-      width: duSetWidth(295),
-      height: duSetHeight(80),
+      width: 295.w,
+      height: 80.h,
       margin: EdgeInsets.only(
-        top: duSetHeight(marginTop),
+        top: marginTop.h,
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            width: duSetWidth(80),
-            height: duSetHeight(80),
+            width: 80.r,
+            height: 80.r,
             child: Image.asset(
               'assets/images/$imageName.png',
               fit: BoxFit.none,
@@ -69,15 +69,15 @@ class _WelecomePageState extends State<WelecomePage> {
           Spacer(),
           Container(
             margin: EdgeInsets.only(
-              left: duSetWidth(20),
+              left: 20.w,
             ),
-            width: duSetWidth(195),
+            width: 195.w,
             child: Text(
               intro,
               textAlign: TextAlign.left,
               style: TextStyle(
                 color: AppColors.primaryText,
-                fontSize: duSetFontSize(16),
+                fontSize: 16.ssp,
                 fontFamily: 'Avenir',
                 fontWeight: FontWeight.normal,
               ),
@@ -112,10 +112,10 @@ class _WelecomePageState extends State<WelecomePage> {
 
   Widget _buildStartButton() {
     return Container(
-      width: duSetWidth(295),
-      height: duSetHeight(44),
+      width: 295.w,
+      height: 44.h,
       margin: EdgeInsets.only(
-        bottom: duSetHeight(20),
+        bottom: 20.ssp,
       ),
       child: FlatButton(
         onPressed: () {},
@@ -123,7 +123,7 @@ class _WelecomePageState extends State<WelecomePage> {
         child: Text(
           'Get started',
           style: TextStyle(
-            fontSize: duSetFontSize(18),
+            fontSize: 18.ssp,
             fontFamily: 'Montserrat',
             fontWeight: FontWeight.w600,
             color: AppColors.primaryElementText,
@@ -136,20 +136,16 @@ class _WelecomePageState extends State<WelecomePage> {
   @override
   Widget build(BuildContext context) {
     // 计算设计稿高度
-    return ScreenUtilInit(
-      designSize: Size(375, 812.0),
-      allowFontScaling: true,
-      child: Scaffold(
-        body: Center(
-          child: Column(
-            children: [
-              _buildPageHeadTitle(),
-              _buildPageHeadDetail(),
-              _buildFeatureDetail(),
-              Spacer(),
-              _buildStartButton(),
-            ],
-          ),
+    return Scaffold(
+      body: Center(
+        child: Column(
+          children: [
+            _buildPageHeadTitle(),
+            _buildPageHeadDetail(),
+            _buildFeatureDetail(),
+            Spacer(),
+            _buildStartButton(),
+          ],
         ),
       ),
     );
