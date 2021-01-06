@@ -90,7 +90,7 @@ class _WelecomePageState extends State<WelecomePage> {
 
   Widget _buildFeatureDetail() {
     return Column(
-      children: [
+      children: <Widget>[
         _buildFeatureItem(
           'future1',
           'Compelling photography and typography provide a beautiful reading',
@@ -118,7 +118,9 @@ class _WelecomePageState extends State<WelecomePage> {
         bottom: 20.ssp,
       ),
       child: FlatButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/sign-in');
+        },
         color: AppColors.primaryElement,
         child: Text(
           'Get started',
@@ -135,6 +137,11 @@ class _WelecomePageState extends State<WelecomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // ScreenUtil.init(
+    //   context,
+    //   designSize: Size(375, 812),
+    //   allowFontScaling: true,
+    // );
     // 计算设计稿高度
     return Scaffold(
       body: Center(
